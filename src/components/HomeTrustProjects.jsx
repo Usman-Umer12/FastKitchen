@@ -91,7 +91,7 @@ const HomeFeatures = () => {
       className="
         relative
         z-10
-        -mt-10
+        -mt-14
         w-full
         bg-[#F8F5EF]
         text-[#171717]

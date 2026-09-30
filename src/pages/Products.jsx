@@ -382,31 +382,69 @@ const Product = () => {
 
       <section className="relative overflow-hidden bg-[#111111]">
 
-        {/* Red glow */}
+        {/* Decorative glow */}
 
-        <div className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-red-600/20 blur-3xl" />
+        <div className="pointer-events-none absolute -right-32 -top-32 h-72 w-72 rounded-full bg-red-600/20 blur-3xl sm:h-96 sm:w-96" />
 
-        <div className="pointer-events-none absolute -bottom-40 -left-32 h-96 w-96 rounded-full bg-red-700/10 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-40 -left-32 h-72 w-72 rounded-full bg-red-700/10 blur-3xl sm:h-96 sm:w-96" />
 
-        <div className="relative mx-auto flex min-h-[70vh] max-w-7xl items-center justify-center px-5 py-20 text-center sm:px-8 lg:px-12">
+        <div
+          className="
+            relative
+            mx-auto
+            flex
+            min-h-[62vh]
+            max-w-7xl
+            items-center
+            justify-center
+            px-5
+            py-16
+            text-center
+            sm:min-h-[65vh]
+            sm:px-8
+            sm:py-20
+            lg:min-h-[70vh]
+            lg:px-12
+          "
+        >
 
-          <div className="w-full mt-15 max-w-4xl">
+          <div className="mt-10 w-full max-w-4xl sm:mt-12">
 
-            {/* Small heading */}
+            {/* MAIN HEADING */}
 
-
-            {/* Main heading */}
-
-            <h1 className="text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
+            <h1
+              className="
+                text-[2.35rem]
+                font-bold
+                leading-[1.08]
+                tracking-[-0.035em]
+                text-white
+                sm:text-5xl
+                md:text-6xl
+                lg:text-7xl
+              "
+            >
               Discover Our
               <span className="block text-red-500">
                 Interior Collection
               </span>
             </h1>
 
-            {/* Description */}
+            {/* DESCRIPTION */}
 
-            <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-white/60 sm:text-base sm:leading-8">
+            <p
+              className="
+                mx-auto
+                mt-5
+                max-w-2xl
+                text-[13px]
+                leading-6
+                text-white/60
+                sm:mt-6
+                sm:text-base
+                sm:leading-7
+              "
+            >
               Explore beautifully crafted doors, wardrobes, bedrooms,
               kitchens and media walls created to bring elegance,
               functionality and character to your space.
@@ -417,12 +455,39 @@ const Product = () => {
             <button
               type="button"
               onClick={scrollToProducts}
-              className="group mt-8 inline-flex items-center justify-center gap-3 rounded-full bg-red-600 px-7 py-3.5 text-xs font-bold uppercase tracking-[0.08em] text-white shadow-xl shadow-red-950/30 transition-all duration-300 hover:-translate-y-1 hover:bg-red-700 active:translate-y-0 sm:px-8 sm:py-4 sm:text-sm"
+              className="
+                group
+                mt-7
+                inline-flex
+                items-center
+                justify-center
+                gap-2.5
+                rounded-full
+                bg-red-600
+                px-6
+                py-3
+                text-[10px]
+                font-bold
+                uppercase
+                tracking-[0.1em]
+                text-white
+                shadow-xl
+                shadow-red-950/30
+                transition-all
+                duration-300
+                hover:-translate-y-1
+                hover:bg-red-700
+                active:translate-y-0
+                sm:mt-8
+                sm:px-8
+                sm:py-3.5
+                sm:text-xs
+              "
             >
               Explore Collection
 
               <ArrowDown
-                size={17}
+                size={16}
                 strokeWidth={2.2}
                 className="transition-transform duration-300 group-hover:translate-y-1"
               />
@@ -438,18 +503,43 @@ const Product = () => {
 
       <section
         id="products-collection"
-        className="scroll-mt-20 bg-[#F7F4EE]"
+        className="scroll-mt-16 bg-[#F7F4EE]"
       >
 
         {/* ====================================================
             CATEGORY NAVIGATION
         ==================================================== */}
 
-        <div className="sticky top-0 z-40 border-b border-black/[0.06] bg-[#F7F4EE]/95 backdrop-blur-xl">
+        <div
+          className="
+            sticky
+            top-0
+            z-40
+            border-b
+            border-black/[0.06]
+            bg-[#F7F4EE]/95
+            backdrop-blur-xl
+          "
+        >
 
           <div className="mx-auto max-w-7xl overflow-x-auto scrollbar-hide">
 
-            <div className="flex min-w-max items-center justify-start gap-2 px-4 py-3 sm:justify-center sm:gap-3 sm:px-6 lg:py-4">
+            <div
+              className="
+                flex
+                min-w-max
+                items-center
+                justify-start
+                gap-2
+                px-4
+                py-2.5
+                sm:justify-center
+                sm:gap-3
+                sm:px-6
+                sm:py-3
+                lg:py-3.5
+              "
+            >
 
               {categories.map((category) => {
                 const isActive = activeCategory === category.id;
@@ -459,11 +549,32 @@ const Product = () => {
                     key={category.id}
                     type="button"
                     onClick={() => handleCategoryChange(category.id)}
-                    className={`flex h-11 items-center justify-center rounded-full px-5 text-[10px] font-bold uppercase tracking-[0.1em] transition-all duration-300 sm:h-12 sm:px-6 sm:text-xs ${
-                      isActive
-                        ? "bg-[#171717] text-white shadow-lg shadow-black/10"
-                        : "bg-white text-[#555] ring-1 ring-black/[0.05] hover:text-red-600"
-                    }`}
+                    className={`
+                      flex
+                      h-9
+                      items-center
+                      justify-center
+                      rounded-full
+                      px-4
+                      text-[9px]
+                      font-bold
+                      uppercase
+                      tracking-[0.09em]
+                      whitespace-nowrap
+                      transition-all
+                      duration-300
+                      sm:h-10
+                      sm:px-5
+                      sm:text-[10px]
+                      lg:h-11
+                      lg:px-6
+                      lg:text-xs
+                      ${
+                        isActive
+                          ? "bg-[#171717] text-white shadow-md shadow-black/10"
+                          : "bg-white text-[#555] ring-1 ring-black/[0.05] hover:text-red-600"
+                      }
+                    `}
                   >
                     {category.name}
                   </button>
@@ -478,21 +589,68 @@ const Product = () => {
             COLLECTION INTRO
         ==================================================== */}
 
-        <div className="mx-auto max-w-7xl px-4 pb-10 pt-10 sm:px-6 sm:pb-12 sm:pt-14 lg:px-8">
+        <div
+          className="
+            mx-auto
+            max-w-7xl
+            px-4
+            pb-8
+            pt-8
+            sm:px-6
+            sm:pb-10
+            sm:pt-11
+            lg:px-8
+            lg:pb-12
+            lg:pt-12
+          "
+        >
 
-          <div className="border-b border-black/[0.08] pb-8">
+          <div className="border-b border-black/[0.08] pb-7 sm:pb-8">
 
             <div className="max-w-3xl">
 
-              <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.25em] text-red-600 sm:text-xs">
+              <p
+                className="
+                  mb-2
+                  text-[9px]
+                  font-bold
+                  uppercase
+                  tracking-[0.22em]
+                  text-red-600
+                  sm:mb-2.5
+                  sm:text-[10px]
+                "
+              >
                 {activeData.label}
               </p>
 
-              <h2 className="text-3xl font-bold tracking-tight text-[#151515] sm:text-4xl lg:text-5xl">
+              <h2
+                className="
+                  text-2xl
+                  font-bold
+                  leading-tight
+                  tracking-tight
+                  text-[#151515]
+                  sm:text-3xl
+                  lg:text-4xl
+                "
+              >
                 {activeData.name}
               </h2>
 
-              <p className="mt-4 max-w-2xl text-sm leading-7 text-[#686868] sm:text-base sm:leading-8">
+              <p
+                className="
+                  mt-2.5
+                  max-w-2xl
+                  text-[12px]
+                  leading-5.5
+                  text-[#686868]
+                  sm:mt-3
+                  sm:text-sm
+                  sm:leading-6
+                  lg:text-base
+                "
+              >
                 {activeData.intro}
               </p>
 
@@ -506,16 +664,38 @@ const Product = () => {
 
           <div
             id="products-grid"
-            className="scroll-mt-28 pt-8 sm:pt-10"
+            className="scroll-mt-24 pt-6 sm:pt-8"
           >
 
-            <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4 lg:gap-6">
+            <div
+              className="
+                grid
+                grid-cols-2
+                gap-2.5
+                sm:gap-4
+                lg:grid-cols-4
+                lg:gap-5
+              "
+            >
 
               {activeProducts.map((product, index) => (
 
                 <article
                   key={`${product.category}-${index}`}
-                  className="group overflow-hidden rounded-2xl bg-white shadow-[0_5px_25px_rgba(0,0,0,0.05)] ring-1 ring-black/[0.04] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(0,0,0,0.10)]"
+                  className="
+                    group
+                    overflow-hidden
+                    rounded-xl
+                    bg-white
+                    shadow-[0_4px_20px_rgba(0,0,0,0.045)]
+                    ring-1
+                    ring-black/[0.04]
+                    transition-all
+                    duration-500
+                    hover:-translate-y-1
+                    hover:shadow-[0_15px_35px_rgba(0,0,0,0.09)]
+                    sm:rounded-2xl
+                  "
                 >
 
                   {/* IMAGE */}
@@ -523,7 +703,15 @@ const Product = () => {
                   <button
                     type="button"
                     onClick={() => setSelectedProduct(product)}
-                    className="relative block aspect-[0.86] w-full overflow-hidden bg-[#e9e5dc] text-left"
+                    className="
+                      relative
+                      block
+                      aspect-[0.86]
+                      w-full
+                      overflow-hidden
+                      bg-[#e9e5dc]
+                      text-left
+                    "
                     aria-label={`View ${product.title}`}
                   >
 
@@ -531,66 +719,168 @@ const Product = () => {
                       src={product.image}
                       alt={product.title}
                       loading="lazy"
-                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.045]"
+                      className="
+                        h-full
+                        w-full
+                        object-cover
+                        transition-transform
+                        duration-700
+                        group-hover:scale-[1.045]
+                      "
                     />
 
-                    {/* Image overlay */}
+                    {/* IMAGE OVERLAY */}
 
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                    <div
+                      className="
+                        absolute
+                        inset-0
+                        bg-gradient-to-t
+                        from-black/45
+                        via-transparent
+                        to-transparent
+                        opacity-0
+                        transition-opacity
+                        duration-300
+                        group-hover:opacity-100
+                      "
+                    />
 
-                    {/* Expand button */}
+                    {/* EXPAND */}
 
-                    <div className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-[#171717] opacity-0 shadow-lg backdrop-blur-md transition-all duration-300 group-hover:opacity-100">
-
+                    <div
+                      className="
+                        absolute
+                        right-2.5
+                        top-2.5
+                        flex
+                        h-8
+                        w-8
+                        items-center
+                        justify-center
+                        rounded-full
+                        bg-white/90
+                        text-[#171717]
+                        opacity-0
+                        shadow-lg
+                        backdrop-blur-md
+                        transition-all
+                        duration-300
+                        group-hover:opacity-100
+                        sm:right-3
+                        sm:top-3
+                        sm:h-9
+                        sm:w-9
+                      "
+                    >
                       <Maximize2
-                        size={14}
+                        size={13}
                         strokeWidth={2}
                       />
-
                     </div>
 
                   </button>
 
                   {/* CONTENT */}
 
-                  <div className="p-4 sm:p-5">
+                  <div className="p-2.5 sm:p-4">
 
-                    {/* Category */}
+                    {/* CATEGORY */}
 
-                    <p className="text-[9px] font-bold uppercase tracking-[0.18em] text-red-600 sm:text-[10px]">
+                    <p
+                      className="
+                        text-[7px]
+                        font-bold
+                        uppercase
+                        tracking-[0.16em]
+                        text-red-600
+                        sm:text-[9px]
+                      "
+                    >
                       {product.category}
                     </p>
 
-                    {/* Title */}
+                    {/* TITLE */}
 
-                    <h3 className="mt-2 min-h-[42px] text-sm font-bold leading-5 tracking-tight text-[#171717] sm:min-h-[48px] sm:text-base sm:leading-6">
+                    <h3
+                      className="
+                        mt-1
+                        min-h-0
+                        text-[11px]
+                        font-bold
+                        leading-[1.35]
+                        tracking-tight
+                        text-[#171717]
+                        sm:mt-1.5
+                        sm:min-h-[40px]
+                        sm:text-sm
+                        sm:leading-5
+                      "
+                    >
                       {product.title}
                     </h3>
 
-                    {/* Description */}
+                    {/* DESCRIPTION */}
 
-                    <p className="mt-2 line-clamp-2 text-[11px] leading-5 text-[#777] sm:text-xs sm:leading-6">
-                      Carefully designed with refined details, practical
-                      proportions and a finish made for contemporary spaces.
+                    <p
+                      className="
+                        mt-1.5
+                        line-clamp-2
+                        text-[9px]
+                        leading-4
+                        text-[#777]
+                        sm:mt-2
+                        sm:text-[11px]
+                        sm:leading-5
+                      "
+                    >
+                      Refined design, practical proportions and premium
+                      finishing for contemporary interiors.
                     </p>
 
-                    {/* WhatsApp */}
+                    {/* WHATSAPP */}
 
                     <a
                       href={getWhatsAppLink(product)}
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(event) => event.stopPropagation()}
-                      className="mt-4 flex min-h-[42px] w-full items-center justify-center gap-2 rounded-xl bg-[#171717] px-2.5 py-2.5 text-[9px] font-bold uppercase tracking-[0.07em] text-white transition-all duration-300 hover:bg-red-600 active:scale-[0.98] sm:min-h-[45px] sm:px-3 sm:text-[10px]"
+                      className="
+                        mt-2.5
+                        flex
+                        min-h-[36px]
+                        w-full
+                        items-center
+                        justify-center
+                        gap-1.5
+                        rounded-lg
+                        bg-[#171717]
+                        px-2
+                        py-2
+                        text-[8px]
+                        font-bold
+                        uppercase
+                        tracking-[0.07em]
+                        text-white
+                        transition-all
+                        duration-300
+                        hover:bg-red-600
+                        active:scale-[0.98]
+                        sm:mt-3
+                        sm:min-h-[42px]
+                        sm:gap-2
+                        sm:rounded-xl
+                        sm:text-[9px]
+                      "
                     >
 
                       <MessageCircle
-                        size={15}
+                        size={13}
                         strokeWidth={2.3}
-                        className="shrink-0"
+                        className="shrink-0 sm:h-[15px] sm:w-[15px]"
                       />
 
-                      <span>WhatsApp Inquiry</span>
+                      <span>WhatsApp</span>
 
                     </a>
 
@@ -612,12 +902,36 @@ const Product = () => {
       {selectedProduct && (
 
         <div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 p-3 backdrop-blur-sm sm:p-6"
+          className="
+            fixed
+            inset-0
+            z-[100]
+            flex
+            items-center
+            justify-center
+            bg-black/80
+            p-2.5
+            backdrop-blur-sm
+            sm:p-5
+          "
           onClick={() => setSelectedProduct(null)}
         >
 
           <div
-            className="relative flex max-h-[94vh] w-full max-w-5xl flex-col overflow-hidden rounded-2xl bg-[#F7F4EE] shadow-2xl sm:flex-row"
+            className="
+              relative
+              flex
+              max-h-[94vh]
+              w-full
+              max-w-5xl
+              flex-col
+              overflow-hidden
+              rounded-xl
+              bg-[#F7F4EE]
+              shadow-2xl
+              sm:rounded-2xl
+              md:flex-row
+            "
             onClick={(event) => event.stopPropagation()}
           >
 
@@ -626,15 +940,47 @@ const Product = () => {
             <button
               type="button"
               onClick={() => setSelectedProduct(null)}
-              className="absolute right-3 top-3 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-black/70 text-white transition-all duration-300 hover:bg-red-600"
+              className="
+                absolute
+                right-2.5
+                top-2.5
+                z-20
+                flex
+                h-9
+                w-9
+                items-center
+                justify-center
+                rounded-full
+                bg-black/70
+                text-white
+                transition-all
+                duration-300
+                hover:bg-red-600
+                sm:right-3
+                sm:top-3
+                sm:h-10
+                sm:w-10
+              "
               aria-label="Close"
             >
-              <X size={19} />
+              <X size={18} />
             </button>
 
             {/* IMAGE */}
 
-            <div className="relative h-[40vh] min-h-[270px] bg-[#e8e2d8] sm:h-auto sm:min-h-[520px] sm:w-[57%]">
+            <div
+              className="
+                relative
+                h-[38vh]
+                min-h-[240px]
+                bg-[#e8e2d8]
+                sm:h-[42vh]
+                sm:min-h-[400px]
+                md:h-auto
+                md:min-h-[520px]
+                md:w-[57%]
+              "
+            >
 
               <img
                 src={selectedProduct.image}
@@ -642,7 +988,28 @@ const Product = () => {
                 className="h-full w-full object-cover"
               />
 
-              <div className="absolute bottom-4 left-4 rounded-full bg-black/75 px-4 py-2 text-[9px] font-bold uppercase tracking-[0.16em] text-white backdrop-blur-md">
+              <div
+                className="
+                  absolute
+                  bottom-3
+                  left-3
+                  rounded-full
+                  bg-black/75
+                  px-3
+                  py-1.5
+                  text-[8px]
+                  font-bold
+                  uppercase
+                  tracking-[0.15em]
+                  text-white
+                  backdrop-blur-md
+                  sm:bottom-4
+                  sm:left-4
+                  sm:px-4
+                  sm:py-2
+                  sm:text-[9px]
+                "
+              >
                 {selectedProduct.category}
               </div>
 
@@ -650,25 +1017,66 @@ const Product = () => {
 
             {/* DETAILS */}
 
-            <div className="flex flex-1 flex-col justify-center overflow-y-auto p-6 sm:p-9 lg:p-11">
+            <div
+              className="
+                flex
+                flex-1
+                flex-col
+                justify-center
+                overflow-y-auto
+                p-5
+                sm:p-7
+                md:p-8
+                lg:p-10
+              "
+            >
 
               <div>
 
-                <div className="mb-4 flex items-center gap-2">
+                <div className="mb-3 flex items-center gap-2 sm:mb-4">
 
                   <span className="h-1.5 w-1.5 rounded-full bg-red-600" />
 
-                  <span className="text-[9px] font-bold uppercase tracking-[0.22em] text-red-600 sm:text-[10px]">
+                  <span
+                    className="
+                      text-[8px]
+                      font-bold
+                      uppercase
+                      tracking-[0.2em]
+                      text-red-600
+                      sm:text-[9px]
+                    "
+                  >
                     {selectedProduct.category}
                   </span>
 
                 </div>
 
-                <h2 className="text-2xl font-bold leading-tight tracking-tight text-[#171717] sm:text-3xl lg:text-4xl">
+                <h2
+                  className="
+                    text-xl
+                    font-bold
+                    leading-tight
+                    tracking-tight
+                    text-[#171717]
+                    sm:text-2xl
+                    lg:text-3xl
+                  "
+                >
                   {selectedProduct.title}
                 </h2>
 
-                <p className="mt-4 text-sm leading-7 text-[#707070] sm:text-base">
+                <p
+                  className="
+                    mt-3
+                    text-[12px]
+                    leading-5.5
+                    text-[#707070]
+                    sm:mt-4
+                    sm:text-sm
+                    sm:leading-6
+                  "
+                >
                   A thoughtfully designed interior piece created with
                   attention to proportion, functionality and contemporary
                   detail. Speak with our team to discuss materials,
@@ -679,32 +1087,118 @@ const Product = () => {
 
               {/* FEATURES */}
 
-              <div className="my-6 space-y-3 border-y border-black/[0.08] py-6">
+              <div
+                className="
+                  my-4
+                  space-y-2.5
+                  border-y
+                  border-black/[0.08]
+                  py-4
+                  sm:my-5
+                  sm:space-y-3
+                  sm:py-5
+                "
+              >
 
-                <div className="flex items-center gap-3 text-xs font-medium text-[#444] sm:text-sm">
+                <div
+                  className="
+                    flex
+                    items-center
+                    gap-2.5
+                    text-[11px]
+                    font-medium
+                    text-[#444]
+                    sm:gap-3
+                    sm:text-sm
+                  "
+                >
 
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-red-50 text-red-600">
-                    <Check size={13} strokeWidth={2.5} />
+                  <span
+                    className="
+                      flex
+                      h-6
+                      w-6
+                      shrink-0
+                      items-center
+                      justify-center
+                      rounded-full
+                      bg-red-50
+                      text-red-600
+                      sm:h-7
+                      sm:w-7
+                    "
+                  >
+                    <Check size={12} strokeWidth={2.5} />
                   </span>
 
                   Premium interior craftsmanship
 
                 </div>
 
-                <div className="flex items-center gap-3 text-xs font-medium text-[#444] sm:text-sm">
+                <div
+                  className="
+                    flex
+                    items-center
+                    gap-2.5
+                    text-[11px]
+                    font-medium
+                    text-[#444]
+                    sm:gap-3
+                    sm:text-sm
+                  "
+                >
 
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-red-50 text-red-600">
-                    <Check size={13} strokeWidth={2.5} />
+                  <span
+                    className="
+                      flex
+                      h-6
+                      w-6
+                      shrink-0
+                      items-center
+                      justify-center
+                      rounded-full
+                      bg-red-50
+                      text-red-600
+                      sm:h-7
+                      sm:w-7
+                    "
+                  >
+                    <Check size={12} strokeWidth={2.5} />
                   </span>
 
                   Custom design consultation
 
                 </div>
 
-                <div className="flex items-center gap-3 text-xs font-medium text-[#444] sm:text-sm">
+                <div
+                  className="
+                    flex
+                    items-center
+                    gap-2.5
+                    text-[11px]
+                    font-medium
+                    text-[#444]
+                    sm:gap-3
+                    sm:text-sm
+                  "
+                >
 
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-red-50 text-red-600">
-                    <Check size={13} strokeWidth={2.5} />
+                  <span
+                    className="
+                      flex
+                      h-6
+                      w-6
+                      shrink-0
+                      items-center
+                      justify-center
+                      rounded-full
+                      bg-red-50
+                      text-red-600
+                      sm:h-7
+                      sm:w-7
+                    "
+                  >
+                    <Check size={12} strokeWidth={2.5} />
                   </span>
 
                   Designed around your space
@@ -719,15 +1213,39 @@ const Product = () => {
                 href={getWhatsAppLink(selectedProduct)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex min-h-[50px] w-full items-center justify-center gap-3 rounded-xl bg-red-600 px-5 py-3.5 text-xs font-bold uppercase tracking-[0.08em] text-white shadow-lg shadow-red-900/15 transition-all duration-300 hover:bg-red-700 active:scale-[0.98] sm:min-h-[54px] sm:text-sm"
+                className="
+                  flex
+                  min-h-[46px]
+                  w-full
+                  items-center
+                  justify-center
+                  gap-2.5
+                  rounded-xl
+                  bg-red-600
+                  px-5
+                  py-3
+                  text-[10px]
+                  font-bold
+                  uppercase
+                  tracking-[0.08em]
+                  text-white
+                  shadow-lg
+                  shadow-red-900/15
+                  transition-all
+                  duration-300
+                  hover:bg-red-700
+                  active:scale-[0.98]
+                  sm:min-h-[52px]
+                  sm:text-xs
+                "
               >
 
                 <MessageCircle
-                  size={19}
+                  size={17}
                   strokeWidth={2.2}
                 />
 
-                Enquire on WhatsApp
+                WhatsApp
 
               </a>
 
