@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import {
-  ArrowUpRight,
-  ChevronLeft,
-  ChevronRight,
-  Phone,
-} from "lucide-react";
+import { ArrowUpRight, Phone } from "lucide-react";
 
 import Navbar from "../components/Navbar";
+import HomeFeatures from "./HomeTrustProjects";
 
 // ============================================================
 // DESKTOP IMAGES
@@ -97,25 +93,11 @@ const Home = () => {
   }, []);
 
   // ==========================================================
-  // SLIDER CONTROLS
-  // ==========================================================
-
-  const nextSlide = () => {
-    setActiveSlide((current) => (current + 1) % slides.length);
-  };
-
-  const previousSlide = () => {
-    setActiveSlide(
-      (current) => (current - 1 + slides.length) % slides.length
-    );
-  };
-
-  // ==========================================================
-  // WHATSAPP MESSAGE
+  // WHATSAPP
   // ==========================================================
 
   const whatsappMessage = encodeURIComponent(
-    `Hello, I found your interior design work online and I'm interested in your products. I would like to discuss a custom interior project and get more details about your designs, pricing and available options.`
+    "Hello, I found your interior design work online and I'm interested in your products. I would like to discuss a custom interior project and get more details about your designs, pricing and available options."
   );
 
   const whatsappLink = `https://wa.me/923008098897?text=${whatsappMessage}`;
@@ -126,6 +108,7 @@ const Home = () => {
     <main
       className="
         min-h-screen
+        bg-[#F8F5EF]
         text-white
         antialiased
       "
@@ -142,7 +125,7 @@ const Home = () => {
         className="
           relative
           h-[70vh]
-          min-h-[650px]
+          min-h-[620px]
           max-h-[760px]
           overflow-hidden
           bg-[#0b0808]
@@ -169,14 +152,14 @@ const Home = () => {
             `}
           >
             <picture>
-              {/* Mobile Image */}
+              {/* MOBILE IMAGE */}
 
               <source
                 media="(max-width: 767px)"
                 srcSet={slide.mobileImage}
               />
 
-              {/* Desktop Image */}
+              {/* DESKTOP IMAGE */}
 
               <img
                 src={slide.desktopImage}
@@ -201,11 +184,12 @@ const Home = () => {
         ))}
 
         {/* ====================================================
-            DARK PROFESSIONAL OVERLAY
+            DESKTOP DARK OVERLAY
         ===================================================== */}
 
         <div
           className="
+            pointer-events-none
             absolute
             inset-0
             z-[2]
@@ -217,34 +201,37 @@ const Home = () => {
         />
 
         {/* ====================================================
-    MOBILE OVERLAY
-==================================================== */}
+            MOBILE OVERLAY
+        ===================================================== */}
 
-<div
-  className="
-    absolute
-    inset-0
-    z-[2]
-    bg-gradient-to-t
-    from-black/[0.28]
-    via-black/[0.16]
-    to-black/[0.06]
-    md:hidden
-  "
-/>
+        <div
+          className="
+            pointer-events-none
+            absolute
+            inset-0
+            z-[2]
+            bg-gradient-to-t
+            from-black/[0.72]
+            via-black/[0.25]
+            to-black/[0.12]
+            md:hidden
+          "
+        />
+
         {/* ====================================================
             BOTTOM DARK GRADIENT
         ===================================================== */}
 
         <div
           className="
+            pointer-events-none
             absolute
             inset-x-0
             bottom-0
             z-[2]
-            h-[38%]
+            h-[42%]
             bg-gradient-to-t
-            from-black/[0.78]
+            from-black/[0.82]
             to-transparent
           "
         />
@@ -276,437 +263,298 @@ const Home = () => {
           <Navbar />
         </div>
 
-       {/* ====================================================
-    HERO CONTENT
-==================================================== */}
-
-<div
-  className="
-    relative
-    z-20
-    mx-auto
-    flex
-    h-full
-    max-w-[1440px]
-    items-center
-    px-5
-    pt-[72px]
-
-    sm:px-8
-    sm:pt-[80px]
-
-    lg:px-12
-    xl:px-16
-  "
->
-  <div
-    className="
-      w-full
-      max-w-[650px]
-      pb-16
-
-      sm:pb-12
-      lg:max-w-[690px]
-    "
-  >
-    {/* ==================================================
-        CATEGORY
-    =================================================== */}
-
-    <div
-      className="
-        mb-5
-        flex
-        items-center
-        gap-3
-
-        sm:mb-6
-      "
-    >
-      <span
-        className="
-          h-[2px]
-          w-8
-          shrink-0
-          rounded-full
-          bg-[#D92720]
-
-          sm:w-11
-        "
-      />
-
-      <span
-        className="
-          whitespace-nowrap
-          text-[9px]
-          font-semibold
-          uppercase
-          leading-none
-          tracking-[0.24em]
-          text-white/[0.88]
-
-          sm:text-[10px]
-          sm:tracking-[0.30em]
-
-          lg:tracking-[0.34em]
-        "
-      >
-        {current.category}
-      </span>
-    </div>
-
-    {/* ==================================================
-        MAIN HEADING
-    =================================================== */}
-
-    <h1
-      className="
-        m-0
-        max-w-[650px]
-        text-[42px]
-        font-semibold
-        leading-[0.98]
-        tracking-[-0.045em]
-        text-white
-
-        sm:text-[54px]
-        md:text-[62px]
-        lg:text-[70px]
-        xl:text-[76px]
-      "
-    >
-      {current.title}
-    </h1>
-
-    {/* ==================================================
-        RED ACCENT HEADING
-    =================================================== */}
-
-    <div
-      className="
-        mt-1
-        max-w-[650px]
-        text-[42px]
-        font-semibold
-        leading-[0.98]
-        tracking-[-0.045em]
-        text-[#D92720]
-
-        sm:text-[54px]
-        md:text-[62px]
-        lg:text-[70px]
-        xl:text-[76px]
-      "
-    >
-      {current.accent}
-    </div>
-
-    {/* ==================================================
-        DESCRIPTION
-    =================================================== */}
-
-    <p
-      className="
-        m-0
-        mt-5
-        max-w-[490px]
-        text-[13px]
-        font-normal
-        leading-[1.65]
-        text-white/[0.72]
-
-        sm:mt-6
-        sm:max-w-[535px]
-        sm:text-[14px]
-        sm:leading-[1.7]
-
-        lg:mt-7
-        lg:text-[15px]
-        lg:leading-[1.75]
-      "
-    >
-      {current.description}
-    </p>
-
-    {/* ==================================================
-        BUTTONS
-    =================================================== */}
-
-    <div
-      className="
-        mt-6
-        grid
-        w-full
-        grid-cols-2
-        gap-3
-
-        sm:mt-7
-        sm:flex
-        sm:w-auto
-        sm:flex-wrap
-        sm:items-center
-      "
-    >
-      {/* Contact */}
-
-      <Link
-        to="/contact"
-        className="
-          group
-          inline-flex
-          min-h-[46px]
-          w-full
-          items-center
-          justify-center
-          gap-2
-          rounded-full
-          bg-[#D92720]
-          px-3
-          text-[11px]
-          font-semibold
-          tracking-wide
-          text-white
-          shadow-[0_10px_30px_rgba(0,0,0,0.25)]
-          transition-all
-          duration-300
-          hover:-translate-y-0.5
-          hover:bg-[#B91F19]
-
-          sm:w-auto
-          sm:min-h-[47px]
-          sm:px-7
-          sm:text-[12px]
-        "
-      >
-        <Phone
-          size={15}
-          strokeWidth={2}
-          className="shrink-0"
-        />
-
-        <span className="whitespace-nowrap">
-          Contact Us
-        </span>
-      </Link>
-
-      {/* Explore */}
-
-      <Link
-        to="/products"
-        className="
-          group
-          inline-flex
-          min-h-[46px]
-          w-full
-          items-center
-          justify-center
-          gap-1.5
-          rounded-full
-          border
-          border-white/[0.24]
-          bg-black/[0.20]
-          px-3
-          text-[10px]
-          font-semibold
-          tracking-wide
-          text-white
-          backdrop-blur-md
-          transition-all
-          duration-300
-          hover:border-white/[0.55]
-          hover:bg-white/[0.10]
-
-          sm:w-auto
-          sm:min-h-[47px]
-          sm:gap-2
-          sm:px-7
-          sm:text-[12px]
-        "
-      >
-        <span className="whitespace-nowrap">
-          Explore Our Products
-        </span>
-
-        <ArrowUpRight
-          size={15}
-          strokeWidth={2}
-          className="
-            shrink-0
-            transition-transform
-            duration-300
-            group-hover:-translate-y-0.5
-            group-hover:translate-x-0.5
-
-            sm:h-4
-            sm:w-4
-          "
-        />
-      </Link>
-    </div>
-  </div>
-</div>
         {/* ====================================================
-            BOTTOM SLIDER CONTROLS
+            HERO CONTENT
         ===================================================== */}
 
         <div
           className="
-            absolute
-            bottom-7
-            left-5
-            right-5
-            z-30
+            relative
+            z-20
+            mx-auto
             flex
+            h-full
+            max-w-[1440px]
             items-center
-            justify-between
-            sm:bottom-8
-            sm:left-8
-            sm:right-8
-            lg:left-12
-            lg:right-12
-            xl:left-16
-            xl:right-16
+            px-5
+            pt-[70px]
+            mt-10
+
+            sm:px-8
+            sm:pt-[75px]
+
+            lg:px-12
+            lg:pt-[70px]
+
+            xl:px-16
           "
         >
-          {/* Slide indicators */}
+          <div
+            className="
+              w-full
+              max-w-[650px]
+              pb-[90px]
 
-          <div className="flex items-center gap-4 sm:gap-5">
-            {slides.map((slide, index) => (
-              <button
-                key={slide.number}
-                type="button"
-                onClick={() => setActiveSlide(index)}
-                aria-label={`Show ${slide.category}`}
+              sm:max-w-[680px]
+              sm:pb-[100px]
+
+              lg:max-w-[710px]
+              lg:pb-[105px]
+            "
+          >
+            {/* ==================================================
+                CATEGORY
+            =================================================== */}
+
+            <div
+              className="
+                mb-5
+                flex
+                items-center
+                gap-3
+
+                sm:mb-6
+              "
+            >
+              <span
                 className="
-                  group
-                  flex
-                  items-center
-                  gap-2
-                  outline-none
+                  h-[2px]
+                  w-8
+                  shrink-0
+                  rounded-full
+                  bg-[#D92720]
+
+                  sm:w-11
+                "
+              />
+
+              <span
+                className="
+                  whitespace-nowrap
+                  text-[9px]
+                  font-semibold
+                  uppercase
+                  leading-none
+                  tracking-[0.24em]
+                  text-white/[0.88]
+
+                  sm:text-[10px]
+                  sm:tracking-[0.30em]
+
+                  lg:tracking-[0.34em]
                 "
               >
-                <span
-                  className={`
-                    text-[10px]
-                    font-semibold
-                    tracking-[0.18em]
-                    transition-colors
-                    duration-300
-                    ${
-                      activeSlide === index
-                        ? "text-white"
-                        : "text-white/[0.38]"
-                    }
-                  `}
-                >
-                  {slide.number}
+                {current.category}
+              </span>
+            </div>
+
+            {/* ==================================================
+                MAIN HEADING
+            =================================================== */}
+
+            <h1
+              className="
+                m-0
+                max-w-[650px]
+                text-[40px]
+                font-semibold
+                leading-[0.98]
+                tracking-[-0.045em]
+                text-white
+
+                sm:text-[54px]
+
+                md:text-[62px]
+
+                lg:text-[70px]
+
+                xl:text-[76px]
+              "
+            >
+              {current.title}
+            </h1>
+
+            {/* ==================================================
+                RED ACCENT
+            =================================================== */}
+
+            <div
+              className="
+                mt-1
+                max-w-[650px]
+                text-[40px]
+                font-semibold
+                leading-[0.98]
+                tracking-[-0.045em]
+                text-[#D92720]
+
+                sm:text-[54px]
+
+                md:text-[62px]
+
+                lg:text-[70px]
+
+                xl:text-[76px]
+              "
+            >
+              {current.accent}
+            </div>
+
+            {/* ==================================================
+                DESCRIPTION
+            =================================================== */}
+
+            <p
+              className="
+                m-0
+                mt-5
+                max-w-[490px]
+                text-[13px]
+                font-normal
+                leading-[1.65]
+                text-white/[0.72]
+
+                sm:mt-6
+                sm:max-w-[535px]
+                sm:text-[14px]
+                sm:leading-[1.7]
+
+                lg:mt-7
+                lg:max-w-[570px]
+                lg:text-[15px]
+                lg:leading-[1.75]
+              "
+            >
+              {current.description}
+            </p>
+
+            {/* ==================================================
+                BUTTONS
+            =================================================== */}
+
+            <div
+              className="
+                mt-6
+                grid
+                w-full
+                grid-cols-2
+                gap-3
+
+                sm:mt-7
+                sm:flex
+                sm:w-auto
+                sm:items-center
+              "
+            >
+              {/* CONTACT */}
+
+              <Link
+                to="/contact"
+                className="
+                  group
+                  inline-flex
+                  min-h-[46px]
+                  w-full
+                  items-center
+                  justify-center
+                  gap-2
+                  rounded-full
+                  bg-[#D92720]
+                  px-3
+                  text-[11px]
+                  font-semibold
+                  tracking-wide
+                  text-white
+                  shadow-[0_10px_30px_rgba(0,0,0,0.25)]
+                  transition-all
+                  duration-300
+
+                  hover:-translate-y-0.5
+                  hover:bg-[#B91F19]
+
+                  sm:w-auto
+                  sm:min-h-[47px]
+                  sm:px-7
+                  sm:text-[12px]
+                "
+              >
+                <Phone
+                  size={15}
+                  strokeWidth={2}
+                  className="shrink-0"
+                />
+
+                <span className="whitespace-nowrap">
+                  Contact Us
+                </span>
+              </Link>
+
+              {/* EXPLORE */}
+
+              <Link
+                to="/products"
+                className="
+                  group
+                  inline-flex
+                  min-h-[46px]
+                  w-full
+                  items-center
+                  justify-center
+                  gap-1.5
+                  rounded-full
+                  border
+                  border-white/[0.24]
+                  bg-black/[0.20]
+                  px-3
+                  text-[10px]
+                  font-semibold
+                  tracking-wide
+                  text-white
+                  backdrop-blur-md
+                  transition-all
+                  duration-300
+
+                  hover:border-white/[0.55]
+                  hover:bg-white/[0.10]
+
+                  sm:w-auto
+                  sm:min-h-[47px]
+                  sm:gap-2
+                  sm:px-7
+                  sm:text-[12px]
+                "
+              >
+                <span className="whitespace-nowrap">
+                  Explore Our Products
                 </span>
 
-                <span
-                  className={`
-                    h-[2px]
-                    rounded-full
-                    transition-all
-                    duration-500
-                    ${
-                      activeSlide === index
-                        ? "w-8 bg-[#D92720]"
-                        : "w-0 bg-white/50"
-                    }
-                  `}
+                <ArrowUpRight
+                  size={15}
+                  strokeWidth={2}
+                  className="
+                    shrink-0
+                    transition-transform
+                    duration-300
+                    group-hover:-translate-y-0.5
+                    group-hover:translate-x-0.5
+                  "
                 />
-              </button>
-            ))}
-          </div>
-
-          {/* Arrows */}
-
-          <div className="flex items-center gap-2">
-            <button
-              type="button"
-              onClick={previousSlide}
-              aria-label="Previous slide"
-              className="
-                flex
-                h-9
-                w-9
-                items-center
-                justify-center
-                rounded-full
-                border
-                border-white/[0.22]
-                bg-black/[0.20]
-                text-white
-                backdrop-blur-md
-                transition-all
-                duration-200
-                hover:border-white/[0.55]
-                hover:bg-white/[0.10]
-                sm:h-10
-                sm:w-10
-              "
-            >
-              <ChevronLeft
-                size={17}
-                strokeWidth={1.8}
-              />
-            </button>
-
-            <button
-              type="button"
-              onClick={nextSlide}
-              aria-label="Next slide"
-              className="
-                flex
-                h-9
-                w-9
-                items-center
-                justify-center
-                rounded-full
-                border
-                border-white/[0.22]
-                bg-black/[0.20]
-                text-white
-                backdrop-blur-md
-                transition-all
-                duration-200
-                hover:border-white/[0.55]
-                hover:bg-white/[0.10]
-                sm:h-10
-                sm:w-10
-              "
-            >
-              <ChevronRight
-                size={17}
-                strokeWidth={1.8}
-              />
-            </button>
+              </Link>
+            </div>
           </div>
         </div>
-
-        {/* ====================================================
-            RED PROGRESS BAR
-        ===================================================== */}
-
-        <div
-          className="
-            absolute
-            bottom-0
-            left-0
-            z-40
-            h-[2px]
-            bg-[#D92720]
-            transition-all
-            duration-500
-          "
-          style={{
-            width: `${((activeSlide + 1) / slides.length) * 100}%`,
-          }}
-        />
       </section>
 
       {/* ======================================================
-          PROFESSIONAL WHATSAPP FLOATING BUTTON
+          FEATURES SECTION
+      ======================================================= */}
+
+      <div className="relative z-10 w-full">
+        <HomeFeatures />
+      </div>
+
+      {/* ======================================================
+          WHATSAPP FLOATING BUTTON
       ======================================================= */}
 
       <a
@@ -731,8 +579,10 @@ const Home = () => {
           shadow-[0_12px_35px_rgba(0,0,0,0.28)]
           transition-all
           duration-300
+
           hover:scale-105
           hover:shadow-[0_15px_40px_rgba(37,211,102,0.28)]
+
           sm:bottom-6
           sm:right-6
           sm:h-[59px]
@@ -757,7 +607,7 @@ const Home = () => {
         />
 
         {/* ====================================================
-            WHATSAPP SVG
+            WHATSAPP ICON
         ===================================================== */}
 
         <svg

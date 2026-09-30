@@ -9,7 +9,6 @@ import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Marquee from "./components/Marquee";
 import Categories from "./components/Categories";
-import HomeTrustProjects from "./components/HomeTrustProjects";
 import Footer from "./components/Footer";
 
 // ============================================================
@@ -32,8 +31,6 @@ const HomePage = () => {
       {/* Hero / Home Section */}
       <Home />
 
-      {/* Featured / Trust Projects */}
-      <HomeTrustProjects />
 
       {/* Categories */}
       <Categories />
