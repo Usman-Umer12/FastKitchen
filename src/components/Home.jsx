@@ -126,7 +126,6 @@ const Home = () => {
     <main
       className="
         min-h-screen
-        bg-[#090909]
         text-white
         antialiased
       "
@@ -218,22 +217,21 @@ const Home = () => {
         />
 
         {/* ====================================================
-            MOBILE OVERLAY
-        ===================================================== */}
+    MOBILE OVERLAY
+==================================================== */}
 
-        <div
-          className="
-            absolute
-            inset-0
-            z-[2]
-            bg-gradient-to-t
-            from-black/[0.90]
-            via-black/[0.38]
-            to-black/[0.22]
-            md:hidden
-          "
-        />
-
+<div
+  className="
+    absolute
+    inset-0
+    z-[2]
+    bg-gradient-to-t
+    from-black/[0.28]
+    via-black/[0.16]
+    to-black/[0.06]
+    md:hidden
+  "
+/>
         {/* ====================================================
             BOTTOM DARK GRADIENT
         ===================================================== */}
@@ -278,231 +276,275 @@ const Home = () => {
           <Navbar />
         </div>
 
-        {/* ====================================================
-            HERO CONTENT
-        ===================================================== */}
+       {/* ====================================================
+    HERO CONTENT
+==================================================== */}
 
-        <div
+<div
+  className="
+    relative
+    z-20
+    mx-auto
+    flex
+    h-full
+    max-w-[1440px]
+    items-center
+    px-5
+    pt-[72px]
+
+    sm:px-8
+    sm:pt-[80px]
+
+    lg:px-12
+    xl:px-16
+  "
+>
+  <div
+    className="
+      w-full
+      max-w-[650px]
+      pb-16
+
+      sm:pb-12
+      lg:max-w-[690px]
+    "
+  >
+    {/* ==================================================
+        CATEGORY
+    =================================================== */}
+
+    <div
+      className="
+        mb-5
+        flex
+        items-center
+        gap-3
+
+        sm:mb-6
+      "
+    >
+      <span
+        className="
+          h-[2px]
+          w-8
+          shrink-0
+          rounded-full
+          bg-[#D92720]
+
+          sm:w-11
+        "
+      />
+
+      <span
+        className="
+          whitespace-nowrap
+          text-[9px]
+          font-semibold
+          uppercase
+          leading-none
+          tracking-[0.24em]
+          text-white/[0.88]
+
+          sm:text-[10px]
+          sm:tracking-[0.30em]
+
+          lg:tracking-[0.34em]
+        "
+      >
+        {current.category}
+      </span>
+    </div>
+
+    {/* ==================================================
+        MAIN HEADING
+    =================================================== */}
+
+    <h1
+      className="
+        m-0
+        max-w-[650px]
+        text-[42px]
+        font-semibold
+        leading-[0.98]
+        tracking-[-0.045em]
+        text-white
+
+        sm:text-[54px]
+        md:text-[62px]
+        lg:text-[70px]
+        xl:text-[76px]
+      "
+    >
+      {current.title}
+    </h1>
+
+    {/* ==================================================
+        RED ACCENT HEADING
+    =================================================== */}
+
+    <div
+      className="
+        mt-1
+        max-w-[650px]
+        text-[42px]
+        font-semibold
+        leading-[0.98]
+        tracking-[-0.045em]
+        text-[#D92720]
+
+        sm:text-[54px]
+        md:text-[62px]
+        lg:text-[70px]
+        xl:text-[76px]
+      "
+    >
+      {current.accent}
+    </div>
+
+    {/* ==================================================
+        DESCRIPTION
+    =================================================== */}
+
+    <p
+      className="
+        m-0
+        mt-5
+        max-w-[490px]
+        text-[13px]
+        font-normal
+        leading-[1.65]
+        text-white/[0.72]
+
+        sm:mt-6
+        sm:max-w-[535px]
+        sm:text-[14px]
+        sm:leading-[1.7]
+
+        lg:mt-7
+        lg:text-[15px]
+        lg:leading-[1.75]
+      "
+    >
+      {current.description}
+    </p>
+
+    {/* ==================================================
+        BUTTONS
+    =================================================== */}
+
+    <div
+      className="
+        mt-6
+        grid
+        w-full
+        grid-cols-2
+        gap-3
+
+        sm:mt-7
+        sm:flex
+        sm:w-auto
+        sm:flex-wrap
+        sm:items-center
+      "
+    >
+      {/* Contact */}
+
+      <Link
+        to="/contact"
+        className="
+          group
+          inline-flex
+          min-h-[46px]
+          w-full
+          items-center
+          justify-center
+          gap-2
+          rounded-full
+          bg-[#D92720]
+          px-3
+          text-[11px]
+          font-semibold
+          tracking-wide
+          text-white
+          shadow-[0_10px_30px_rgba(0,0,0,0.25)]
+          transition-all
+          duration-300
+          hover:-translate-y-0.5
+          hover:bg-[#B91F19]
+
+          sm:w-auto
+          sm:min-h-[47px]
+          sm:px-7
+          sm:text-[12px]
+        "
+      >
+        <Phone
+          size={15}
+          strokeWidth={2}
+          className="shrink-0"
+        />
+
+        <span className="whitespace-nowrap">
+          Contact Us
+        </span>
+      </Link>
+
+      {/* Explore */}
+
+      <Link
+        to="/products"
+        className="
+          group
+          inline-flex
+          min-h-[46px]
+          w-full
+          items-center
+          justify-center
+          gap-1.5
+          rounded-full
+          border
+          border-white/[0.24]
+          bg-black/[0.20]
+          px-3
+          text-[10px]
+          font-semibold
+          tracking-wide
+          text-white
+          backdrop-blur-md
+          transition-all
+          duration-300
+          hover:border-white/[0.55]
+          hover:bg-white/[0.10]
+
+          sm:w-auto
+          sm:min-h-[47px]
+          sm:gap-2
+          sm:px-7
+          sm:text-[12px]
+        "
+      >
+        <span className="whitespace-nowrap">
+          Explore Our Products
+        </span>
+
+        <ArrowUpRight
+          size={15}
+          strokeWidth={2}
           className="
-            relative
-            z-20
-            mx-auto
-            flex
-            h-full
-            max-w-[1440px]
-            items-center
-            px-5
-            pt-[72px]
-            sm:px-8
-            sm:pt-[80px]
-            lg:px-12
-            xl:px-16
+            shrink-0
+            transition-transform
+            duration-300
+            group-hover:-translate-y-0.5
+            group-hover:translate-x-0.5
+
+            sm:h-4
+            sm:w-4
           "
-        >
-          <div
-            className="
-              w-full
-              max-w-[650px]
-              pb-16
-              sm:pb-12
-              lg:max-w-[690px]
-            "
-          >
-            {/* ==================================================
-                CATEGORY
-            =================================================== */}
-
-            <div
-              className="
-                mb-5
-                flex
-                items-center
-                gap-3
-                sm:mb-6
-              "
-            >
-              <span
-                className="
-                  h-[2px]
-                  w-8
-                  rounded-full
-                  bg-[#D92720]
-                  sm:w-11
-                "
-              />
-
-              <span
-                className="
-                  text-[9px]
-                  font-semibold
-                  uppercase
-                  tracking-[0.28em]
-                  text-white/[0.88]
-                  sm:text-[10px]
-                  sm:tracking-[0.34em]
-                "
-              >
-                {current.category}
-              </span>
-            </div>
-
-            {/* ==================================================
-                MAIN HEADING
-            =================================================== */}
-
-            <h1
-              className="
-                max-w-[650px]
-                text-[42px]
-                font-semibold
-                leading-[0.98]
-                tracking-[-0.045em]
-                text-white
-                sm:text-[54px]
-                md:text-[62px]
-                lg:text-[70px]
-                xl:text-[76px]
-              "
-            >
-              {current.title}
-            </h1>
-
-            {/* ==================================================
-                RED ACCENT HEADING
-            =================================================== */}
-
-            <div
-              className="
-                mt-1
-                max-w-[650px]
-                text-[42px]
-                font-semibold
-                leading-[1]
-                tracking-[-0.045em]
-                text-[#D92720]
-                sm:text-[54px]
-                md:text-[62px]
-                lg:text-[70px]
-                xl:text-[76px]
-              "
-            >
-              {current.accent}
-            </div>
-
-            {/* ==================================================
-                DESCRIPTION
-            =================================================== */}
-
-            <p
-              className="
-                mt-6
-                max-w-[535px]
-                text-[13px]
-                font-normal
-                leading-[1.75]
-                text-white/[0.72]
-                sm:mt-7
-                sm:text-[14px]
-                lg:text-[15px]
-                lg:leading-[1.8]
-              "
-            >
-              {current.description}
-            </p>
-
-            {/* ==================================================
-                BUTTONS
-            =================================================== */}
-
-            <div
-              className="
-                mt-7
-                flex
-                flex-wrap
-                items-center
-                gap-3
-                sm:mt-8
-              "
-            >
-              {/* Contact */}
-
-              <Link
-                to="/contact"
-                className="
-                  group
-                  inline-flex
-                  min-h-[47px]
-                  items-center
-                  justify-center
-                  gap-2
-                  rounded-full
-                  bg-[#D92720]
-                  px-6
-                  text-[12px]
-                  font-semibold
-                  tracking-wide
-                  text-white
-                  shadow-[0_10px_30px_rgba(0,0,0,0.25)]
-                  transition-all
-                  duration-300
-                  hover:-translate-y-0.5
-                  hover:bg-[#B91F19]
-                  sm:px-7
-                "
-              >
-                <Phone
-                  size={15}
-                  strokeWidth={2}
-                />
-
-                Contact Us
-              </Link>
-
-              {/* Explore */}
-
-              <Link
-                to="/products"
-                className="
-                  group
-                  inline-flex
-                  min-h-[47px]
-                  items-center
-                  justify-center
-                  gap-2
-                  rounded-full
-                  border
-                  border-white/[0.24]
-                  bg-black/[0.20]
-                  px-6
-                  text-[12px]
-                  font-semibold
-                  tracking-wide
-                  text-white
-                  backdrop-blur-md
-                  transition-all
-                  duration-300
-                  hover:border-white/[0.55]
-                  hover:bg-white/[0.10]
-                  sm:px-7
-                "
-              >
-                Explore Our Products
-
-                <ArrowUpRight
-                  size={16}
-                  strokeWidth={2}
-                  className="
-                    transition-transform
-                    duration-300
-                    group-hover:-translate-y-0.5
-                    group-hover:translate-x-0.5
-                  "
-                />
-              </Link>
-            </div>
-          </div>
-        </div>
-
+        />
+      </Link>
+    </div>
+  </div>
+</div>
         {/* ====================================================
             BOTTOM SLIDER CONTROLS
         ===================================================== */}

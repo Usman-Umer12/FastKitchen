@@ -41,26 +41,26 @@ const features = [
     ),
   },
 
- {
-  title: "Custom Designs",
-  description: "Interior solutions tailored to your space",
-  icon: (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className="h-5 w-5"
-    >
-      <path d="M12 3v18" />
-      <path d="M3 12h18" />
-      <path d="M5 5l14 14" />
-      <path d="M19 5L5 19" />
-    </svg>
-  ),
-},
+  {
+    title: "Custom Designs",
+    description: "Interior solutions tailored to your space",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="h-5 w-5"
+      >
+        <path d="M12 3v18" />
+        <path d="M3 12h18" />
+        <path d="M5 5l14 14" />
+        <path d="M19 5L5 19" />
+      </svg>
+    ),
+  },
 
   {
     title: "Dedicated Support",
@@ -87,7 +87,19 @@ const features = [
 
 const HomeFeatures = () => {
   return (
-    <section className="relative z-10 -mt-13 w-full bg-[#F8F5EF] text-[#171717] sm:-mt-7 lg:-mt-10">
+    <section
+      className="
+        relative
+        z-10
+        -mt-10
+        w-full
+        bg-[#F8F5EF]
+        text-[#171717]
+
+        sm:-mt-10
+        lg:-mt-10
+      "
+    >
       <div className="w-full">
         <div className="grid w-full grid-cols-2 lg:grid-cols-4">
           {features.map((feature, index) => (
